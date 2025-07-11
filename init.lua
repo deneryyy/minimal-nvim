@@ -41,6 +41,18 @@ local function my_on_attach(bufnr)
 end
 
 require("nvim-tree").setup {
+  -- Disable all git highlighting cuz annoying
+  git = {
+    enable = false,
+  },
+  renderer = {
+    highlight_git = false,
+    icons = {
+      show = {
+        git = false,
+      },
+    },
+  },
   on_attach = my_on_attach,
 }
 
@@ -51,3 +63,6 @@ vim.opt.termguicolors = true
 require("bufferline").setup {}
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Change tab to next" })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { desc = "Change tab to previous" })
+
+-- Refactoring
+require('refactoring').setup()
