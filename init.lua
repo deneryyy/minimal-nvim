@@ -8,6 +8,17 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Window up" })
 
 require("config.lazy")
 
+-- Blink cmp for autocompletion
+local cmp = require("blink.cmp")
+cmp.setup({
+})
+
+-- Autopairs
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt", "vim" },
+})
+
+
 -- Catpuccin Theme
 require("catppuccin").setup()
 
